@@ -1,6 +1,6 @@
 Popsearch::Application.routes.draw do
 
-  resources :searches
+  get '/searches', to: 'searches#index', as: 'searchy'
 
   root 'searches#new'
   

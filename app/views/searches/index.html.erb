@@ -1,7 +1,15 @@
 <div class="search-overlay fadeOut">
         <div class="search-wrapper">
             <!-- Simple form with one text field automatically focused -->
-            <input type="text" autofocus>
+
+			 <form action="/searches" method="get">
+			 	<input type="text" name="search_term" autofocus="true">
+			  	<input type="submit">	
+			 </form>
+			  
+
+			  
+
         </div>
     </div>
 
@@ -17,7 +25,7 @@
       <% @media_item.each do |m| %>
 
 		<%#= m.to_json  %>
-		<div class="Image_Wrapper" data-caption="<%= m.caption.text %>">
+		<div class="Image_Wrapper" data-caption='<%= m.caption.text %>'>
 			<a>
                 <img src=<%= m.images.standard_resolution.url %>>
             </a>

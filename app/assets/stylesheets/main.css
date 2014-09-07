@@ -10,7 +10,7 @@
 	text-align: center;
 }
 
-.search-overlay input {
+.search-overlay input[type=text] {
 	font-family: 'Courgette', cursive;
 	width: 50%;
 	background: none;
@@ -23,6 +23,10 @@
 	color: white;
 	outline-offset: 0;
 	outline: none;
+}
+
+.search-overlay input[type=submit] {
+	opacity: 0;
 }
 
 .fadeOut {
