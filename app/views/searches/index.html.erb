@@ -1,0 +1,17 @@
+<h1>Search#index</h1>
+<div ng-app="popSearch">
+  <div ng-controller="PostCtrl">{{ test }}</div>
+
+  <form class="medium-5 columns" ng-submit=".add()">
+
+    <h1>Search for tags, get tag info and get media by tag</h1>
+
+
+
+
+      <%= @tag_name %>
+      <%= @media_count %>
+      <% @media_item.each do |m| %>
+      <img src=" <%= m.images.thumbnail.url %> ">
+      <% end %>
+</div>
