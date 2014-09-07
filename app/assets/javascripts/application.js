@@ -12,11 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-
-
-//= require angular
-//= require angular-resource
-//= require angular-rails-templates
-//= require_tree ../templates
-
+//= require jquery.collagePlus
+//= require jquery.removeWhitespace
+//= require jquery.collageCaption
+//= require collage
+//= require app
 //= require_tree .

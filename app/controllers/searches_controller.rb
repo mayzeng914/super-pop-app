@@ -4,6 +4,7 @@ class SearchesController < ApplicationController
   respond_to :json
 
    def index
+    # todo: capture a client's own particular access_token
     Instagram.configure do |config|
       config.client_id = 'ce5ace1b89a749edafede0f742ef1edb'
       config.client_secret = '620bcb48a9414f1399adb5df84fa8c0f'
@@ -11,8 +12,11 @@ class SearchesController < ApplicationController
       #config.client_ips = '<Comma separated list of IPs>'
     end
     
+
     client = Instagram.client(:access_token => '3172303.3bc0d59.22110f07a75d450cbc0743667f6f33e6')
     @html = "<h1>Search for tags, get tag info and get media by tag</h1>"
+
+    # todo: capture search term from form
     tags = client.tag_search('puppy')
     @media_count = tags[0].media_count
     @tag_name = tags[0].name
