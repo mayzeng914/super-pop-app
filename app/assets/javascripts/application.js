@@ -17,4 +17,3 @@
 //= require jquery.collageCaption
 //= require collage
 //= require app
-//= require_tree .

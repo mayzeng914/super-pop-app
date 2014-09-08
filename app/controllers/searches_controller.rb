@@ -23,7 +23,7 @@ class SearchesController < ApplicationController
         #config.client_ips = '<Comma separated list of IPs>'
     end
 
-      # todo: capture a client's own particular access_token
+      # todo: use access_token for Instagram connection
       @client = Instagram.client(:access_token => '3172303.3bc0d59.22110f07a75d450cbc0743667f6f33e6')
       @search_term = params['search_term'] || 'puppy'
       @tags = @client.tag_search(@search_term)

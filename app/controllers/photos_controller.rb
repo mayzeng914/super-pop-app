@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:photo_finder]
 
   # GET /photos
   def saver
@@ -8,10 +9,17 @@ class PhotosController < ApplicationController
 
     # Create a photo with a reference to a user and save to database
     Photo.create!(photo_url: photo_url, user_id: user_id)
+  end
 
+  # todo: JSON end point
+  def photo_finder
+    @photos = Photo.where(user_id: @current_user.id)
+    render :json => @photos
+  end
+
+  # todo: View to consume API
+  def photo_wall
     
-
-
   end
 
   private
@@ -20,6 +28,9 @@ class PhotosController < ApplicationController
       @photo = Photo.find(params[:id])
     end
 
+    def set_user
+      @current_user = current_user
+    end
     # Only allow a trusted parameter "white list" through.
     def photo_params
       params[:photo]

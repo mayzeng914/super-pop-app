@@ -11,6 +11,8 @@ Popsearch::Application.routes.draw do
 
   # Photos Controller Routes
   post '/photos/saver', to: 'photos#saver', as: 'saver'
+  get '/photos/photo_finder', to: 'photos#photo_finder', as: 'finder'
+  get '/photos/photo_wall', to: 'photos#photo_wall', as: 'wall'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
