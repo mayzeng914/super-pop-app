@@ -4,12 +4,10 @@ class SearchesController < ApplicationController
   before_action :set_client
 
    def index
+   @current_user = current_user
    
     # todo: capture search term from form
-
     @media_item = @client.tag_recent_media(@tags[0].name)
-
-
     
   end
 
@@ -43,12 +41,14 @@ class SearchesController < ApplicationController
         config.client_secret = 'fd6f7b58d558424ca6519eb2400a4f3a'
         # For secured endpoints only
         #config.client_ips = '<Comma separated list of IPs>'
-      end
+    end
 
       # todo: capture a client's own particular access_token
       @client = Instagram.client(:access_token => '3172303.3bc0d59.22110f07a75d450cbc0743667f6f33e6')
       @search_term = params['search_term'] || 'puppy'
       @tags = @client.tag_search(@search_term)
   end
+
+
 
 end

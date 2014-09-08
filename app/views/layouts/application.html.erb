@@ -9,6 +9,13 @@
 </head>
 <body>
 	<header class="header">
+		<a href="../oauth/connect">Connect to Instagram</a>
+		<div class="profile-data">
+			<p><%= @current_user.full_name %></p>
+			<img src='<%= @current_user.prof_pic %>' alt="Profile Picture">	
+		</div>
+		
+		
     </header>
   
 <%= yield %>

@@ -2,6 +2,9 @@ Popsearch::Application.routes.draw do
 
   get '/searches', to: 'searches#index', as: 'searchy'
 
+  get '/oauth/connect', to: 'oauth#connect', as: 'connect'
+  get '/oauth/callback', to: 'oauth#callback', as: 'callback'
+
   root 'searches#new'
   
   # The priority is based upon order of creation: first created -> highest priority.
