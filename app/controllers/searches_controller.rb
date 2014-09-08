@@ -4,8 +4,8 @@ class SearchesController < ApplicationController
   before_action :set_client
 
    def index
-   @current_user = current_user
-   
+    @current_user = current_user
+
     # todo: capture search term from form
     @media_item = @client.tag_recent_media(@tags[0].name)
     
@@ -13,26 +13,6 @@ class SearchesController < ApplicationController
 
   def show
     @search = Search.find(params[:id])
-  end
-
-  def new
-    @search = Search.new
-  end
-
-  def create
-    # @search = Search.new(params.require(:search).permit(:tags))
-  end
-
-  def edit
-    @search = Search.find(params[:id])
-  end
-
-  def update
-    @search = Search.find(params[:id])
-  end
-
-  def destroy
-    @search = Search.find(params[:id]).destroy
   end
 
   def set_client

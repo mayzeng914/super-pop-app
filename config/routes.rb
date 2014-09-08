@@ -6,6 +6,8 @@ Popsearch::Application.routes.draw do
   get '/oauth/callback', to: 'oauth#callback', as: 'callback'
 
   root 'searches#new'
+
+  get '/sessions/destroy', to: 'sessions#destroy', as: 'destroy'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

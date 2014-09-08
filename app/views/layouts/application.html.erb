@@ -9,14 +9,19 @@
 </head>
 <body>
 	<header class="header">
-		<a href="../oauth/connect">Connect to Instagram</a>
 		<div class="img-wrapper">
 			<%= image_tag("superpop.svg", class: "superpop-logo") %>
 		</div>
-		<div class="profile-data">
+		<% if @current_user %>
+			<div class="profile-data">
 			<p><%= @current_user.full_name %></p>
-			<img src='<%= @current_user.prof_pic %>' alt="Profile Picture">	
+			<a href="/sessions/destroy"><img src='<%= @current_user.prof_pic %>' alt="Profile Picture">	</a>
 		</div>
+		<% else %>
+			<a href="../oauth/connect">Connect to Instagram</a>
+		<% end %>
+		
+		
 		
 		
     </header>

@@ -1,3 +1,7 @@
+.hiddenUser {
+	opacity: 0;
+}
+
 header {
 	position: relative;
 	height: 50px;
@@ -15,6 +19,30 @@ header {
 	margin: 0 auto;
 	top: 0;
 }
+
+.profile-data {
+	float: right;
+	color: white;
+	
+	p {
+		position: absolute;
+		top: 0px;
+		right: 65px;
+		line-height: 25px;
+		text-align: right;
+		text-indent: 35px;	
+	}
+	
+	img {
+		position: absolute;
+		top: 0px;
+		right: 10px;
+		width: 40px;
+		height: 40px;
+		margin-top: 5px;
+	}
+}
+
 
 /****** Main styles for image wall ******/
 
@@ -73,27 +101,6 @@ header {
 	transition: all .8s ease;
 }
 
-.profile-data {
-	float: right;
-	color: white;
-	
-	p {
-		position: absolute;
-		right: 60px;
-		line-height: 50px;
-		text-align: right;
-		text-indent: 35px;	
-	}
-	
-	img {
-		position: absolute;
-		top: 0px;
-		right: 10px;
-		width: 40px;
-		height: 40px;
-		margin-top: 5px;
-	}
-}
 
 
 
