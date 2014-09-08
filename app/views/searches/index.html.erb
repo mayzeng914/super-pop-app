@@ -23,6 +23,7 @@
 
 		<%#= m.to_json  %>
 		<div class="Image_Wrapper" data-caption='<%= m.caption.text %>'>
+			<div class="heart-overlay fadeOut"></div>
 			<a>
                 <img src=<%= m.images.standard_resolution.url %>>
             </a>

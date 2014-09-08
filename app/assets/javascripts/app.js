@@ -5,7 +5,8 @@ $.fn.exists = function () {
 
 $(function(){
 	  
-	  var overlay = $('.search-overlay');
+	  var heartOverlay = $('.heart-overlay');
+	  var searchOverlay = $('.search-overlay');
 	  var userExists = $('.profile-data').exists();
 	  console.log(userExists);
 
@@ -16,20 +17,31 @@ $(function(){
 		  	if ((code >= 65 && code <= 90) || (code >= 97 && code <= 122 || code >= 48 && code <= 57)){
 		  		console.log('Only a-z or A-Z has been pressed, or 0 - 9');
 		  		console.log(code);	
-		  		overlay.removeClass('fadeOut').addClass('fadeIn');
+		  		searchOverlay.removeClass('fadeOut').addClass('fadeIn');
 		  	}
 		 });
 	  }
 	  
-
 	  // This is to capture an escape key
 	  $(document).on('keyup', function(event){
 	  	var code = event.keyCode || event.which;
 	  	console.log(code);
 	  	// escape key
 	  	if (code == 27){
-	  		overlay.removeClass('fadeIn').addClass('fadeOut');
+	  		searchOverlay.removeClass('fadeIn').addClass('fadeOut');
 	  	}
+	  });
+
+	  // Dbl click shows a heart and then saves the image
+	  $('.Image_Wrapper').on('dblclick', function(){
+	  	var heartOverlay = $(this).find('.heart-overlay');
+	  	heartOverlay.removeClass('fadeOut').addClass('fadeIn');
+	  	setTimeout(function(){
+	  		heartOverlay.removeClass('fadeIn').addClass('fadeOut');
+	  	}, 800);
+
+	  	// todo: Use a POST to save our image url to Photos
+
 	  });
 
 });
