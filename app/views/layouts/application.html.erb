@@ -13,7 +13,7 @@
 			<%= image_tag("superpop.svg", class: "superpop-logo") %>
 		</div>
 		<% if @current_user %>
-			<a href="/sessions/destroy">Log Out</a>
+			<a href="/sessions/destroy" class="logout">Log Out</a>
 			<div data-id=<%= @current_user.id %> class="profile-data">
 			<p><%= @current_user.full_name %></p>
 			<a href="/photos/photo_wall"><img src='<%= @current_user.prof_pic %>' alt="Profile Picture"></a>
