@@ -8,6 +8,9 @@ Popsearch::Application.routes.draw do
   root 'searches#new'
 
   get '/sessions/destroy', to: 'sessions#destroy', as: 'destroy'
+
+  # Photos Controller Routes
+  post '/photos/saver', to: 'photos#saver', as: 'saver'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

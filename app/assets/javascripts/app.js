@@ -40,8 +40,18 @@ $(function(){
 	  		heartOverlay.removeClass('fadeIn').addClass('fadeOut');
 	  	}, 800);
 
-	  	// todo: Use a POST to save our image url to Photos
-
+	  	var post_url = $(this).find('.instaImage').attr('src');
+	  	var user_id = $('.profile-data').attr('data-id');
+	  	console.log(user_id);
+	  	// Use a POST to save our image url to Photos
+	  	$.ajax({
+	      type: 'POST',
+	      data: 'photo_url=' + post_url + '&user_id=' + user_id, //id=17446&chru=0
+	      success: function() { console.log('SUCCESS!') },
+	      error: function(){ console.log('FAILURE!!!') },
+	      url: '/photos/saver',
+	      cache:false
+    	});
 	  });
 
 });
